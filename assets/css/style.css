@@ -1,0 +1,276 @@
+:root {
+    --bg-color: #F5F2EB;
+    --card-bg: #EDE9E0;
+    --text-primary: #2C2C2C;
+    --text-secondary: #666;
+    --accent-color: #C4785A;
+    --border-color: #D4CFC4;
+    --hover-color: #E8E4DB;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+}
+
+.container {
+    max-width: 640px;
+    /* Okuma kolaylığı için daraltılmış */
+    width: 100%;
+}
+
+/* Logo Styles */
+.profile-logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid var(--border-color);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-logo:hover {
+    transform: scale(1.05);
+    border-color: var(--text-primary);
+}
+
+/* Header & Profile */
+header {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.hero-section {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* İddialı başlık */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Subscription Box (Lead Magnet) */
+.subscribe-box {
+    background: transparent;
+    border: none;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.sub-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.sub-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.input-group:focus-within {
+    border-color: white;
+}
+
+input[type="email"] {
+    flex: 1;
+    background: #111;
+    border: none;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+button {
+    background: white;
+    color: black;
+    border: none;
+    padding: 0 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+/* Sections */
+.section-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+/* List Items (Guides, Portfolio) */
+.list-item {
+    display: block;
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.list-item:hover {
+    transform: translateX(10px);
+}
+
+.item-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* About Me */
+.about-me {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.about-me p {
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid #444;
+}
+
+/* Footer & Socials */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.social-link:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 4rem;
+    color: #444;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+        /* Smaller heading on mobile */
+    }
+
+    .hero-text {
+        font-size: 1rem;
+    }
+
+    .profile-logo {
+        width: 150px;
+        /* Slightly smaller on mobile to fit */
+        height: 150px;
+    }
+
+    .subscribe-box {
+        padding: 1.5rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.8rem;
+    }
+}
