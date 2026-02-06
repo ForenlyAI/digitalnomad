@@ -1,276 +1,271 @@
 :root {
-    --bg-color: #F5F2EB;
-    --card-bg: #EDE9E0;
-    --text-primary: #2C2C2C;
-    --text-secondary: #666;
-    --accent-color: #C4785A;
-    --border-color: #D4CFC4;
-    --hover-color: #E8E4DB;
+  /* Color Palette - Sage Green & Bronze Mix */
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #f0f2f5;
+  --accent-bronze: #C4785A;
+  --accent-bronze-light: #dba28c;
+  --accent-sage: #8fb3a0;
+  --accent-sage-light: #b2ccbf;
+  --text-main: #1a1a1b;
+  --text-muted: #65676b;
+  --white: #ffffff;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  
+  /* Shadows & Blur */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+  --blur-md: blur(12px);
+  
+  /* Spacing */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    padding: 4rem 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(143, 179, 160, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(196, 120, 90, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(143, 179, 160, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(196, 120, 90, 0.15) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Layout */
 .container {
-    max-width: 640px;
-    /* Okuma kolaylığı için daraltılmış */
-    width: 100%;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* Logo Styles */
-.profile-logo {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid var(--border-color);
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.profile-logo:hover {
-    transform: scale(1.05);
-    border-color: var(--text-primary);
-}
-
-/* Header & Profile */
-header {
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.brand {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    text-decoration: none;
-    color: var(--text-primary);
-}
-
-.brand-name {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-}
-
-.hero-section {
-    margin-bottom: 3rem;
-}
-
+/* Typography */
 h1 {
-    font-size: 2.5rem;
-    /* İddialı başlık */
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.25rem;
 }
 
-.hero-text {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+.subtitle {
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 1rem;
 }
 
-/* Subscription Box (Lead Magnet) */
-.subscribe-box {
-    background: transparent;
-    border: none;
-    padding: 2rem 0;
-    margin-bottom: 4rem;
-    text-align: center;
+/* Profile Section */
+.profile-card {
+  text-align: center;
+  padding-top: 2rem;
 }
 
-.sub-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: white;
+.profile-img-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
-.sub-desc {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+.profile-img-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(45deg, var(--accent-sage), var(--accent-bronze));
+  z-index: -1;
+  opacity: 0.5;
 }
 
-.input-group {
-    display: flex;
-    gap: 0;
-    max-width: 400px;
-    margin: 0 auto;
-    border: 1px solid #333;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: border-color 0.2s;
+.profile-logo {
+  width: 110px;
+  height: 110px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  border: 4px solid var(--white);
+  box-shadow: var(--shadow-md);
 }
 
-.input-group:focus-within {
-    border-color: white;
+/* Buttons & Links */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-main);
+  font-weight: 600;
 }
 
-input[type="email"] {
-    flex: 1;
-    background: #111;
-    border: none;
-    padding: 1rem;
-    color: white;
-    font-size: 1rem;
-    outline: none;
+.glass-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--accent-bronze-light);
 }
 
-button {
-    background: white;
-    color: black;
-    border: none;
-    padding: 0 1.5rem;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 0.95rem;
-    transition: background 0.2s;
+.glass-card ion-icon {
+  font-size: 1.4rem;
+  color: var(--accent-bronze);
 }
 
-button:hover {
-    background: #ddd;
+.main-btn {
+  background: var(--accent-bronze);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(196, 120, 90, 0.3);
+  margin: 1rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Sections */
-.section-title {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+.main-btn:hover {
+  background: #ad6245;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 120, 90, 0.4);
 }
 
-.section {
-    margin-bottom: 4rem;
+/* Section Dividers */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-sage);
+  margin-top: 1rem;
+  text-align: center;
 }
 
-/* List Items (Guides, Portfolio) */
-.list-item {
-    display: block;
-    text-decoration: none;
-    color: var(--text-primary);
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border-color);
-    transition: transform 0.2s;
+/* Modal Enhancements */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: 50;
+  justify-content: center;
+  align-items: flex-end; /* Mobile friendly */
 }
 
-.list-item:hover {
-    transform: translateX(10px);
-}
-
-.item-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-    display: flex;
+@media (min-width: 640px) {
+  .modal {
     align-items: center;
-    gap: 0.5rem;
+  }
 }
 
-.item-desc {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.modal-content {
+  background: var(--white);
+  width: 100%;
+  max-width: 480px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 2.5rem 2rem;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* About Me */
-.about-me {
-    font-size: 1rem;
-    color: #ccc;
+@media (min-width: 640px) {
+  .modal-content {
+    border-radius: var(--radius-lg);
+  }
 }
 
-.about-me p {
-    margin-bottom: 1rem;
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-.highlight {
-    color: white;
-    font-weight: 600;
-    border-bottom: 1px solid #444;
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-secondary);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
 }
 
-/* Footer & Socials */
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-.social-link:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
-}
-
+/* Footer */
 footer {
-    margin-top: 4rem;
-    color: #444;
-    font-size: 0.8rem;
-    text-align: center;
+  margin-top: auto;
+  padding: 2rem 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    body {
-        padding: 2rem 1rem;
-    }
+/* Content Pages Support */
+.blog-content {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
 
-    .container {
-        width: 100%;
-    }
+.blog-content h2 {
+  margin: 2rem 0 1rem;
+  color: var(--accent-sage);
+}
 
-    h1 {
-        font-size: 1.8rem;
-        /* Smaller heading on mobile */
-    }
+.blog-content ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
 
-    .hero-text {
-        font-size: 1rem;
-    }
-
-    .profile-logo {
-        width: 150px;
-        /* Slightly smaller on mobile to fit */
-        height: 150px;
-    }
-
-    .subscribe-box {
-        padding: 1.5rem;
-    }
-
-    .input-group {
-        flex-direction: column;
-    }
-
-    button {
-        width: 100%;
-        padding: 0.8rem;
-    }
+.blog-content li {
+  margin-bottom: 0.5rem;
 }

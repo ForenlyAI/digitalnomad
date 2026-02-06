@@ -5,271 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Bahadir.ai | Builder • Digital Nomad</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://bahadir.ai/favicon.png?v=2">
-    <link rel="shortcut icon" type="image/png" href="https://bahadir.ai/favicon.png?v=2">
-    <link rel="apple-touch-icon" href="https://bahadir.ai/assets/img/profile.png?v=2">
+
+    <!-- Meta Tags -->
     <meta name="description" content="Builder • Digital Nomad • Building tech solutions while exploring the world.">
+    <link rel="icon" type="image/png" href="assets/img/profile.png?v=2">
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bahadir.ai/">
-    <meta property="og:title" content="Bahadir.ai | Builder • Digital Nomad">
-    <meta property="og:description" content="Building tech solutions while exploring the world.">
-    <meta property="og:image" content="https://bahadir.ai/assets/img/profile.png?v=2">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bahadir.ai/">
-    <meta property="twitter:title" content="Bahadir.ai | Builder • Digital Nomad">
-    <meta property="twitter:image" content="https://bahadir.ai/assets/img/profile.png?v=2">
-
-    <!-- Ionicons -->
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            height: 100%;
-            overflow: hidden;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #F5F3EF;
-            color: #2C2C2C;
-        }
-
-        .page-container {
-            height: 100vh;
-            height: 100dvh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .profile-logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        h1 {
-            font-size: clamp(1.5rem, 5vw, 2.2rem);
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .subtitle {
-            font-size: clamp(0.9rem, 3vw, 1.1rem);
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .who-btn {
-            background: transparent;
-            border: 2px solid #C4785A;
-            color: #C4785A;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-        }
-
-        .who-btn:hover {
-            background: #C4785A;
-            color: white;
-        }
-
-        .section-title {
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.6rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding: 8px 14px;
-            background: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #2C2C2C;
-            font-size: 0.85rem;
-            font-weight: 500;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: all 0.2s ease;
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .social-link ion-icon {
-            font-size: 1.1rem;
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 15px;
-            font-size: 0.75rem;
-            color: #aaa;
-        }
-
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 16px;
-            max-width: 420px;
-            width: 100%;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 12px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-        }
-
-        .modal h2 {
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
-
-        .modal p {
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-        }
-
-        .modal a {
-            color: #C4785A;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Mobile adjustments */
-        @media (max-width: 480px) {
-            .profile-logo {
-                width: 100px;
-                height: 100px;
-            }
-
-            .social-links {
-                gap: 0.5rem;
-            }
-
-            .social-link {
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-    <div class="page-container">
-        <img src="assets/img/profile.png?v=2" alt="Bahadir" class="profile-logo">
+    <div class="container animate-fade-in">
+        <!-- Profile Header -->
+        <div class="profile-card">
+            <div class="profile-img-wrapper">
+                <img src="assets/img/profile.png?v=2" alt="Bahadir" class="profile-logo">
+            </div>
+            <h1>Hey! I'm Bahadir.</h1>
+            <p class="subtitle">✈️ Builder • Digital Nomad</p>
 
-        <h1>Hey! I'm Bahadir.</h1>
-        <p class="subtitle">✈️ Digital Nomad</p>
-
-        <button class="who-btn" onclick="openModal()">Who am I? 👋</button>
-
-        <div class="section-title">Find me here</div>
-        <div class="social-links">
-            <a href="https://www.youtube.com/@bahadir_ai" target="_blank" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon> YouTube
-            </a>
-            <a href="https://www.tiktok.com/@bahadir.ai" target="_blank" class="social-link">
-                <ion-icon name="logo-tiktok"></ion-icon> TikTok
-            </a>
-            <a href="https://www.instagram.com/bahadir_ai" target="_blank" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon> Instagram
-            </a>
-            <a href="https://www.facebook.com/ciloglubahadir/" target="_blank" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon> Facebook
-            </a>
+            <button class="main-btn" onclick="openModal()">
+                Who am I? <ion-icon name="hand-right-outline"></ion-icon>
+            </button>
         </div>
 
-        <div class="footer">© 2026 Bahadir.ai</div>
+        <!-- Links Section -->
+        <div class="section-label">Find me here</div>
+
+        <a href="https://www.youtube.com/@bahadir_ai" target="_blank" class="glass-card">
+            <ion-icon name="logo-youtube"></ion-icon> YouTube
+        </a>
+
+        <a href="https://www.tiktok.com/@bahadir.ai" target="_blank" class="glass-card">
+            <ion-icon name="logo-tiktok"></ion-icon> TikTok
+        </a>
+
+        <a href="https://www.instagram.com/bahadir_ai" target="_blank" class="glass-card">
+            <ion-icon name="logo-instagram"></ion-icon> Instagram
+        </a>
+
+        <div class="section-label">Reading List</div>
+
+        <a href="tech-stack.html" class="glass-card">
+            <ion-icon name="hardware-chip-outline"></ion-icon> Tech Stack for Nomad Life
+        </a>
+
+        <a href="digital-nomad.html" class="glass-card">
+            <ion-icon name="airplane-outline"></ion-icon> My Nomad Journey
+        </a>
+
+        <a href="build-in-public.html" class="glass-card">
+            <ion-icon name="build-outline"></ion-icon> How to Build in Public
+        </a>
+
+        <a href="build-log.html" class="glass-card">
+            <ion-icon name="list-outline"></ion-icon> Weekly Build Log
+        </a>
+
+        <footer>
+            © 2026 Bahadir.ai • Built with ☕ & AI
+        </footer>
     </div>
 
     <!-- Who am I Modal -->
     <div id="whoAmIModal" class="modal">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">×</button>
-            <h2>Who am I? 👋</h2>
-            <p>Hey! I'm <strong>Bahadir</strong> - ✈️ Digital Nomad and Content Creator.</p>
-            <p>I travel the world while building tech products and sharing my journey openly.</p>
-            <p>
-                🌍 Currently: <strong>Türkiye</strong><br>
-                💻 Building: <a href="https://forenly.ai" target="_blank">forenly.ai</a> - AI Agency<br>
-                🎓 <strong>'16 Mech</strong> <a href="https://twitter.com/itu1773" target="_blank">@itu1773</a> ·
-                <strong>'21 MSc IT</strong> <a href="https://twitter.com/cankayau" target="_blank">@cankayau</a><br>
-                🏠 Born in: <strong>Istanbul</strong>
-            </p>
+            <button class="modal-close" onclick="closeModal()">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <h2 style="margin-bottom: 1.5rem; color: var(--accent-bronze);">Who am I? 👋</h2>
+            <div
+                style="display: flex; flex-direction: column; gap: 1rem; color: var(--text-main); font-size: 1rem; line-height: 1.6;">
+                <p>Hey! I'm <strong>Bahadir</strong> - an engineer turned digital nomad and content creator.</p>
+                <p>I travel the world while building tech products and sharing my journey openly with my community.</p>
+                <div
+                    style="background: var(--bg-secondary); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-sage);">
+                    <p style="margin-bottom: 0.5rem;">🌍 Currently: <strong>Türkiye</strong></p>
+                    <p>🎓 <strong>ITU</strong> Mechanical Engineer / <strong>Cankaya</strong> MSc IT</p>
+                </div>
+                <p>Born in <strong>Istanbul</strong>, living everywhere.</p>
+            </div>
         </div>
     </div>
 
     <script>
+        const modal = document.getElementById('whoAmIModal');
+
         function openModal() {
-            document.getElementById('whoAmIModal').style.display = 'flex';
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         }
+
         function closeModal() {
-            document.getElementById('whoAmIModal').style.display = 'none';
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-        document.getElementById('whoAmIModal').addEventListener('click', function (e) {
-            if (e.target === this) closeModal();
+
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) closeModal();
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
     </script>
 </body>
