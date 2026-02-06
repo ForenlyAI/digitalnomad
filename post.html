@@ -4,56 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post | Bahadir.ai</title>
-    <link rel="icon" type="image/png" href="assets/img/profile.png?v=2">
-
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <title>Loading... | Bahadir.ai</title>
+    <link rel="icon" type="image/x-icon" href="https://bahadir.ai/favicon.ico">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .container {
-            max-width: 600px;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: var(--accent-bronze);
-            font-weight: 600;
-            margin-bottom: 2rem;
-            transition: transform 0.2s ease;
-        }
-
-        .back-link:hover {
-            transform: translateX(-4px);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
-<body style="display: block; padding: 4rem 1rem;">
-    <div class="container" style="margin: 0 auto;">
-        <a href="index.html" class="back-link animate-fade-in">
-            <ion-icon name="arrow-back-outline"></ion-icon> Back to Home
-        </a>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="brand">
+                <img src="assets/img/profile.png" alt="Bahadir Logo" class="profile-logo"
+                    style="width: 80px; height: 80px;">
+            </a>
+        </header>
 
-        <div class="blog-content animate-fade-in" style="animation-delay: 0.1s;">
-            <!-- Dynamic content will be loaded here -->
-            <div id="blog-post-content">
-                <p style="text-align: center; color: var(--text-muted);">Loading post content...</p>
-            </div>
+        <!-- Dynamic content will be loaded here -->
+        <div id="blog-post-content">
+            <p style="text-align: center; color: #888;">Loading...</p>
         </div>
 
-        <footer>
-            © 2026 Bahadir.ai • Built with ☕ & AI
+        <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #D4CFC4;">
+            <a href="index.html" style="color: #C4785A; text-decoration: none;">← Back to Home</a>
+        </div>
+
+        <footer style="margin-top: 3rem; text-align: center; opacity: 0.5;">
+            © 2026 Bahadir.ai
         </footer>
     </div>
+
 </body>
 
 </html>
