@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bahadir.ai | Builder • Digital Nomad</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://bahadir.ai/favicon.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="https://bahadir.ai/favicon.png?v=2">
+    <link rel="apple-touch-icon" href="https://bahadir.ai/assets/img/profile.png?v=2">
+    <meta name="description" content="Builder • Digital Nomad • Building tech solutions while exploring the world.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bahadir.ai/">
+    <meta property="og:title" content="Bahadir.ai | Builder • Digital Nomad">
+    <meta property="og:description" content="Building tech solutions while exploring the world.">
+    <meta property="og:image" content="https://bahadir.ai/assets/img/profile.png?v=2">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bahadir.ai/">
+    <meta property="twitter:title" content="Bahadir.ai | Builder • Digital Nomad">
+    <meta property="twitter:image" content="https://bahadir.ai/assets/img/profile.png?v=2">
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #F5F3EF;
+            color: #2C2C2C;
+        }
+
+        .page-container {
+            height: 100vh;
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .who-btn {
+            background: transparent;
+            border: 2px solid #C4785A;
+            color: #C4785A;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        .who-btn:hover {
+            background: #C4785A;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 14px;
+            background: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #2C2C2C;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-link ion-icon {
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 15px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 420px;
+            width: 100%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .modal h2 {
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .modal p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .modal a {
+            color: #C4785A;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 480px) {
+            .profile-logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .social-links {
+                gap: 0.5rem;
+            }
+
+            .social-link {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-container">
+        <img src="assets/img/profile.png?v=2" alt="Bahadir" class="profile-logo">
+
+        <h1>Hey! I'm Bahadir.</h1>
+        <p class="subtitle">✈️ Digital Nomad</p>
+
+        <button class="who-btn" onclick="openModal()">Who am I? 👋</button>
+
+        <div class="section-title">Find me here</div>
+        <div class="social-links">
+            <a href="https://www.youtube.com/@bahadircilson" target="_blank" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon> YouTube
+            </a>
+            <a href="https://www.tiktok.com/@bahadircilson" target="_blank" class="social-link">
+                <ion-icon name="logo-tiktok"></ion-icon> TikTok
+            </a>
+            <a href="https://www.instagram.com/bahadircilson/" target="_blank" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon> Instagram
+            </a>
+            <a href="https://x.com/bahadircilson" target="_blank" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon> Twitter
+            </a>
+            <a href="https://www.facebook.com/ciloglubahadir/" target="_blank" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon> Facebook
+            </a>
+            <a href="https://www.linkedin.com/in/bahadir-ciloglu-49b98b369/" target="_blank" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+            </a>
+            <a href="https://whop.com/nomad-builder-hub/" target="_blank" class="social-link">
+                <ion-icon name="globe-outline"></ion-icon> Whop Hub
+            </a>
+        </div>
+
+        <div class="footer">© 2026 Bahadir.ai</div>
+    </div>
+
+    <!-- Who am I Modal -->
+    <div id="whoAmIModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2>Who am I? 👋</h2>
+            <p>Hey! I'm <strong>Bahadir</strong> - ✈️ Digital Nomad and Content Creator.</p>
+            <p>I travel the world while building tech products and sharing my journey openly.</p>
+            <p>
+                🌍 Currently: <strong>Türkiye</strong><br>
+                🎓 <strong>'16 Mech</strong> <a href="https://twitter.com/itu1773" target="_blank">@itu1773</a> ·
+                <strong>'21 MSc IT</strong> <a href="https://twitter.com/cankayau" target="_blank">@cankayau</a><br>
+                🏠 Born in: <strong>Istanbul</strong>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('whoAmIModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('whoAmIModal').style.display = 'none';
+        }
+        document.getElementById('whoAmIModal').addEventListener('click', function (e) {
+            if (e.target === this) closeModal();
+        });
+    </script>
+</body>
+
+</html>
